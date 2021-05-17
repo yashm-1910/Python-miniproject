@@ -1,0 +1,169 @@
+{% extends "website/base.html" %}
+{% load static %}
+{% block content %}
+	{% autoescape off %}
+    
+    <!--Content Starts-->
+    <div class="container-fluid pt-4">
+      <div class="row">
+          <!--Confirmed Cases-->
+          <div class="col-xl-3 col-md-4 mb-4">
+            <div class="card shadow h-100 py-2" style="border-left:solid 5px #e74a3b;">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs text-danger text-uppercase mb-1">
+                                Confirmed</div>
+                            <div class="h5 mb-0 text-gray-800"> {{ confirmed }} </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+        <!--Active cases-->
+        <div class="col-xl-3 col-md-4 mb-4">
+          <div class="card shadow h-100 py-2"  style="border-left:solid 5px #0d6efd;">
+              <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                          <div class="text-xs text-primary text-uppercase mb-1">
+                              Active </div>
+                          <div class="h5 mb-0 text-gray-800">{{ active }}</div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-md-4 mb-4">
+          <div class="card shadow h-100 py-2"  style="border-left:solid 5px #1cc88a;">
+              <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                          <div class="text-xs text-success text-uppercase mb-1">
+                              Recovered</div>
+                          <div class="h5 mb-0 text-gray-800"> {{ recovered }}</div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-md-4 mb-4">
+          <div class="card shadow h-100 py-2"  style="border-left:solid 5px #5a5c69;">
+              <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                          <div class="text-xs text-dark text-uppercase mb-1">
+                              Deaths</div>
+                          <div class="h5 mb-0 text-gray-800">{{ deaths }}</div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+      </div>
+      
+      <!--Graph-->
+      <div class="row">
+        <div class="col-xl-7 col-lg-7">
+          <div class="card shadow mb-4">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+              <h6 class="m-0 fw-bold text-primary">Daily Covid-19 Cases</h6>
+            </div>
+            <div class="card-body">
+              <!--Map of states comes here-->
+              {{ plot_div1 }}
+            </div>
+          </div>
+
+          <!--Table-->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 fw-bold text-primary">State Wise Covid-19 Status</h6>
+            </div>
+            <div class="card-body" >
+              <div class="table-responsive">
+                <table class="table">
+                  <thead class="table-dark">
+                    <tr>
+                      <th>No.</th>
+                      <th>State/UT</th>
+                      <th>Total Cases</th>
+                      <th>Active Cases</th>
+                      <th>Recovered</th>
+                      <th>Deaths</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% if data %}  
+                      {% for i in data %}
+                        <tr>
+                          <td>{{forloop.counter}}</td>
+                          <td>{{i.State_UT}}</td>
+                          <td>{{i.Total_Cases}}</td>
+                          <td>{{i.Active_Cases}}</td>
+                          <td>{{i.Recovered}}</td>
+                          <td>{{i.Deaths}}</td>
+                        </tr>
+                      {% endfor %}
+                    {% endif %}
+                  </tbody>
+                </table>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-xl-5 col-lg-5">
+          <div class="card shadow mb-4">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+              <h6 class="m-0 fw-bold text-primary">Covid-19 Time series (Confirmed Cases)</h6>
+            </div>
+            <div class="card-body">
+              {{ plot_div2 }}
+              <!--Pie chart of states comes here-->
+              
+            </div>
+          </div>
+
+          <div class="card shadow mb-4">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+              <h6 class="m-0 fw-bold text-primary">Covid-19 Time series (Active Cases)</h6>
+            </div>
+            <div class="card-body">
+              {{ plot_div3 }}             
+            </div>
+          </div>
+
+          <div class="card shadow mb-4">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+              <h6 class="m-0 fw-bold text-primary">Covid-19 Time series (Recovered)</h6>
+            </div>
+            <div class="card-body">
+              {{ plot_div4}}             
+            </div>
+          </div>
+
+          <div class="card shadow mb-4">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+              <h6 class="m-0 fw-bold text-primary">Covid-19 Time series (Deaths)</h6>
+            </div>
+            <div class="card-body">
+              {{ plot_div5}}             
+            </div>
+          </div>
+          
+        </div>
+
+      </div>
+
+      
+    </div>
+    
+	{% endautoescape %}
+  {% endblock content %}

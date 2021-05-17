@@ -1,0 +1,115 @@
+{% extends "website/base.html" %}
+{% load static %}
+{% block content %}
+    <!--Marqueue>
+    <div class="row">
+        <div>
+            <marquee>
+                <a class="fs-6" href="https://ndma.gov.in/sites/default/files/2021-05/All%20India%20Impact%20Based%20Warning%20bulletin%20%28MORNING%29%20Dated%2004.05.2021_0.pdf"> IMD Weather Forecast </a> <br><a class="fs-6" href="https://ndma.gov.in/sites/default/files/2021-05/CFCR_CWC_DFB_04_05_2021.pdf">CWC flood Bulletin </a> <br> <a class="fs-6" href= "https://www.drdo.gov.in/avalanche-warning-bulletin">DGRE Avalanche Bulletin </a> 
+            </marquee>
+            
+        </div>
+    </div-->
+    <!--Carousel-->
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static 'images/1.png' %}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'images/2.png' %}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'images/3.jpeg' %}" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <!--Content-->
+      <div class="row py-4" style="background-color: #edf1f5;">
+        
+        <div class="col-xl-8 col-lg-8 mx-4">
+            <p>India is one of the most disaster prone countries in the world, 23 out of 29 states are multi-disaster prone regions. Over 40 million hectare of land has been identified as flood prone. About 57% of the total area is vulnerable to earthquake of varying intensities. The Indian Ocean is one among the six key cyclone-prone regions of the world. The coromandel coastal line is more prone, about 80% of the total cyclones generated in the region hit here.</p><br>
+            <p>Every year millions of Indians are affected by natural disasters. These disasters leave people traumatised by the death of family, friends and their lives devastated by their loss of livelihood. The impact is high and it has been increasing dramatically in the last few decades in terms of number of people affected and the length of time they are affected for. This trend is expected to keep rising in coming years.</p><br>
+            <p>To deal with disasters, there is an urgent need of local institution, which can play a pro-active role in disaster management. This resulted in the motivation for this project, our aim is to provide disaster response and preparedness activities across India.</p>    
+        </div>
+        <div class="col-xl-3 col-lg-3">
+          <div class="card" >
+            <div class="card-body">
+              <h5 class="card-title">Whats New</h5>
+              <a class="nav-link text-dark" href="{% url 'blog-home' %}">Blog</a>
+              <a class="nav-link text-dark" href="{% url 'dash-cases' %}">Covid-19</a>
+              <a class="nav-link text-dark" href="{% url 'assistance' %}">Find Assistance</a>
+              <a class="nav-link text-dark" href="{% url 'login' %}">Share your Story</a>
+              <a class="nav-link text-dark" href="{% url 'volunteer' %}">Register as Volunteer</a>
+              <a class="nav-link text-dark" href="https://ndma.gov.in/sites/default/files/PDF/covid/NDMA-ORDER-DTD-1.5.20.pdf">NDMA Orders & Advisories</a>             
+              </div>
+          </div>
+        </div>
+      </div>
+      <!--Bottom Content-->
+      <div class="row mt-4 mb-4">
+        <h4 class="ps-4">Useful Links</h4>
+        <div class="col-xl-3 col-lg-3 d-flex align-items-stretch">
+          <div class="card" style="width: 18rem;">
+            <div class="card-header">
+              Natural Hazards
+            </div>
+            
+              <a class="nav-link text-dark" href="{% url 'website-cyclone' %}">Cyclone</a>
+              <a class="nav-link text-dark" href="{% url 'website-tsunami' %}">Tsunami</a>
+              <a class="nav-link text-dark" href="{% url 'website-heatwave' %}">Heat Wave</a>
+              <a class="nav-link text-dark" href="{% url 'website-urbanfloods' %}">Urban Floods</a>
+              <a class="nav-link text-dark" href="{% url 'website-floods' %}">Floods</a>
+              <a class="nav-link text-dark" href="{% url 'website-earthquake' %}">Earthquakes</a>
+            
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-3 d-flex align-items-stretch">
+          <div class="card" style="width: 18rem;">
+            <div class="card-header">
+              Man made Hazards
+            </div>
+              <a class="nav-link text-dark" href="{% url 'website-chemical' %}">Chemical</a>
+              <a class="nav-link text-dark" href="{% url 'website-nuclear' %}">Nuclear</a>
+              <a class="nav-link text-dark" href="{% url 'website-biological' %}">Biological</a>
+              <a class="nav-link text-dark" href="">Oil Spills</a>
+              <a class="nav-link text-dark" href="">Bioterrorism</a>
+              <a class="nav-link text-dark" href="">Industrial Accidents</a>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-3 d-flex align-items-stretch">
+          <div class="card" style="width: 18rem;">
+            <div class="card-header">
+              SDMA
+            </div>
+              <a class="nav-link text-dark" href="">Andhra Pradesh</a>
+              <a class="nav-link text-dark" href="">Nuclear</a>
+              <a class="nav-link text-dark" href="">Arunachal Pradesh</a>
+              <a class="nav-link text-dark" href="">Assam</a>
+              <a class="nav-link text-dark" href="">Bihar</a>
+              <a class="nav-link text-dark" href="">More...</a>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-3 d-flex align-items-stretch">
+          <div class="card" style="width: 18rem;">
+            <div class="card-header">
+              Reference Material
+            </div>
+              <a class="nav-link text-dark" href="https://ndma.gov.in/sites/default/files/PDF/national-dm-policy2009.pdf">National Policy on DM</a>
+              <a class="nav-link text-dark" href="https://ndma.gov.in/sites/default/files/PDF/DM_act2005.pdf">DM Act 2005</a>
+              <a class="nav-link text-dark" href="https://ndma.gov.in/sites/default/files/PDF/Newsletters/Aapda%20Samvaad%20Issue%20Feb%202021.pdf">Aapda Samvaad</a>
+              <a class="nav-link text-dark" href="https://ndma.gov.in/sites/default/files/PDF/Guidelines/Guidelines-on-Management-of-GLOFs.pdf">NDMA Guidelines</a>
+              <a class="nav-link text-dark" href="https://ndma.gov.in/sites/default/files/PDF/Reports/NDMA-Annual-Report-2018-19-English.pdf">NDMA Annual Reports</a>
+          </div>
+        </div>
+      </div>
+{% endblock content %}
