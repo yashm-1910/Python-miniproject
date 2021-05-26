@@ -52,7 +52,8 @@ def Volunteer(request):
         if form.is_valid():
             form.save()
             email = form.cleaned_data.get('email')
-            message = 'Thank you for registering!'
+            name = form.cleaned_data.get('firstname') + " " + form.cleaned_data.get('lastname')
+            message = 'Dear {},\nWe are reaching out to thank you for registering to volunteer to help cyclone victims.\nPlease feel free to share the event as our goal is to gather as many volunteers as possible.\nThank you again, and have great day!'.format(name)
             try:
                 send_mail("Cyclone Tauktae Volunteer Registration", message, settings.EMAIL_HOST_USER, [email]) 
                 messages.success(request, f'You have successfully registered!')

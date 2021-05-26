@@ -13,4 +13,5 @@ urlpatterns = [
     path('nuclear/', views.nuclear, name='website-nuclear'), 
     path('tsunami/', views.tsunami, name='website-tsunami'),
     path('urbanfloods/', views.urbanfloods, name='website-urbanfloods'),
+    path('satellite/', views.satellite, name='website-satellite'),
 ]

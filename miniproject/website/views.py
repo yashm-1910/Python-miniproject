@@ -33,3 +33,5 @@ def tsunami(request):
 def urbanfloods(request):
     return render(request, 'website/urbanfloods.html', {'title':'Urban Floods'})
 
+def satellite(request):
+    return render(request, 'website/satellite.html', {'title':'Satellite Images'})
