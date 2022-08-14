@@ -1,6 +1,6 @@
 # Disaster Management Site
 
-This project was created as Python Mini Project for SEM 4
+This project was created as Python Mini Project for SEM 4. The objective of this project is to develop a system that can be used to inform people about disasters, display live COIVD-19 and vaccination stats using Plotly. 
 
 ## Getting Started
 
@@ -49,6 +49,7 @@ pip install django
 * [Python](https://www.python.org/)
 * [Django](https://www.djangoproject.com/) - Web framework used
 * [MySql](https://www.mysql.com/) - Database
+* [Plotly](https://plotly.com/python/) - Graphing Library
 
 
 ## Authors
